@@ -1,8 +1,4 @@
-import dotenv from 'dotenv'
-
-dotenv.config()
-
-const api_key = process.env.API_KEY
+import axios from "axios";
 
 const span = document.getElementById('delelte-search')
 
@@ -131,41 +127,38 @@ const renderButtons = () => {
 
 
 
-// key beta
-const key = 'ibWiB8jG18wlKupB1kU6iPxmh0ns4kFU'
-// **Funzione per chiamare l'API e ottenere le GIF**
+
 
 const fetchGif = async (query) => {
   
-    try {
+
+    try{
+        const response  = await axios.get(`/.netlify/functions/fetchApi?query=${encodeURIComponent(query)}`)
+
+        const gifs = response.data.data
+
+        if (gifs.length === 0) {
+            alert( `Nessuna GIF trovata per "${query}".`);
+             return;
+         }
        
-        // Pulisce i risultati precedenti
-      
-      
-  
-   
-            const response = await axios.get("/.netlify/functions/fetchApi");
-            const res = response.data;
-            const gifs = res.data;
-            
-           // Nasconde il loader
-    
-         
-            if (gifs.length === 0) {
-               alert( `<p>Nessuna GIF trovata per "${query}".</p>`);
-                return;
-            }
-          
-            creaCard(gifs, query);
-            shuffleDivs(resultContainer)
-    // Ritardo di 1.5 secondi per mostrare il loading
+         creaCard(gifs, query);
+         shuffleDivs(resultContainer)
+    }catch(err){
 
-
-    } catch (err) {
         console.error("Errore nella richiesta API:", err);
         loader.style.display = "none"; // Nasconde il loader in caso di errore
         resultContainer.innerHTML = "<p>Errore nel caricamento delle GIF.</p>";
+
     }
+
+
+  
+    
+    
+
+
+   
 };
 
 // **Funzione per rimuovere tutte le card legate alla query**
