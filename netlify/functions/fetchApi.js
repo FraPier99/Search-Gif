@@ -1,40 +1,37 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
-exports.handler = async function(event,context){
+// ✅ Carica variabili d'ambiente in locale
+dotenv.config();
 
-const API_KEY = process.env.API_KEY
+export default async function handler(event, context) {
+    console.log("✅ Funzione Netlify avviata!");
+    console.log("🔍 Query ricevuta:", event.queryStringParameters);
+    console.log("🔍 API_KEY presente?", process.env.API_KEY ? "✅ OK" : "❌ MANCANTE");
 
- // Recupera il parametro 'query' dalla richiesta
- const query = event.queryStringParameters.query || "random"; 
- // Default: 'random'
+    const API_KEY = process.env.API_KEY;
+    const query = event.queryStringParameters?.query || "random"; // Se query è undefined, usa "random"
 
-const API_URL =`https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${API_KEY}&limit=5`
+    const API_URL = `https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${API_KEY}&limit=5`;
 
+    console.log("🚀 URL della richiesta:", API_URL);
 
-try{
-const response = await axios.get(API_URL)
-const data = response.data
+    try {
+        const response = await axios.get(API_URL);
+        console.log("✅ Risposta API ricevuta:", response.data);
 
-return {
-    statusCode: 200,
-    headers: { "Content-Type": "application/json" }, // Aggiunge header JSON per sicurezza
-    body: JSON.stringify(data)
-};
+        // ✅ Assicuriamoci di restituire una risposta accettata da Netlify
+        return new Response(JSON.stringify(response.data), {
+            headers: { "Content-Type": "application/json" },
+            status: 200
+        });
 
-}catch(err){
-    console.error(err,'errore nel recupero dati')
+    } catch (err) {
+        console.error("❌ ERRORE nella richiesta API:", err.message);
 
-    return {
-        statusCode: 500,
-        body: JSON.stringify({ error: "Errore nel recupero dati" })
-    };
+        return new Response(JSON.stringify({ error: "Errore nel recupero dati", details: err.message }), {
+            headers: { "Content-Type": "application/json" },
+            status: 500
+        });
+    }
 }
-
-
-
-    
-    
-
-
-}
-    

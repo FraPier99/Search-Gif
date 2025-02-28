@@ -1,4 +1,5 @@
-import axios from "axios";
+
+
 
 const span = document.getElementById('delelte-search')
 
@@ -133,7 +134,10 @@ const fetchGif = async (query) => {
   
 
     try{
-        const response  = await axios.get(`/.netlify/functions/fetchApi?query=${encodeURIComponent(query)}`)
+        console.log(query)
+        const response  =  await axios.get(`../.netlify/functions/fetchApi?query=${encodeURIComponent(query)}`)
+       
+console.log(response.data)
 
         const gifs = response.data.data
 
@@ -147,7 +151,7 @@ const fetchGif = async (query) => {
     }catch(err){
 
         console.error("Errore nella richiesta API:", err);
-        loader.style.display = "none"; // Nasconde il loader in caso di errore
+    
         resultContainer.innerHTML = "<p>Errore nel caricamento delle GIF.</p>";
 
     }
