@@ -1,0 +1,138 @@
+/*
+
+DA BODY 
+FINO A BUTTON_SEARCH 
+
+*/
+
+
+
+/* Impedisce al browser di cambiare lo sfondo quando si seleziona un suggerimento */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    background-color: #1c1c3c !important; /* Stesso colore dello sfondo dell'input */
+    -webkit-text-fill-color: #f5f5f5 !important;
+    color: #f5f5f5 !important; /* Mantiene il colore del testo */
+    -webkit-box-shadow: 0 0 0px 1000px #1c1c3c inset !important; /* Evita che lo sfondo diventi bianco */
+    transition: background-color 5000s ease-in-out 0s; /* Rende la transizione impercettibile */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🎨 SFONDO E STRUTTURA */
+body {
+    background: linear-gradient(135deg, #1c1c3c, #2a2a6a);
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    padding: 20px;
+}
+
+/* 🎯 CONTENITORE PRINCIPALE */
+.container {
+    height: 100vh;
+    display: flex;
+  
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 🔥 TITOLO */
+.title {
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff007f; /* Fucsia neon */
+    text-shadow: 0px 0px 15px #ff007f;
+}
+
+/* 🔍 SEZIONE RICERCA */
+.sezione-cerca {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+   
+}
+
+#input-search {
+    
+    width: 280px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #00d4ff;
+    border-radius: 25px;
+    background-color: #1c1c3c;
+    color: #f5f5f5 !important;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+
+#input-search:focus {
+    border-color: #ffea00;
+    box-shadow: 0 0 10px rgba(255, 234, 0, 0.7);
+}
+
+/* ✨ ICONA CANCELLAZIONE */
+.sezione-cerca span {
+    display: none;
+  
+position: absolute;
+right: 110px;
+    cursor: pointer;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sezione-cerca span svg {
+    width: 18px;
+    height: 18px;
+    
+    color: gray;
+}
+
+/* 🔘 Pulsante di ricerca */
+#button-search {
+    background: linear-gradient(135deg, #ff007f, #ff3cbf);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 4px 10px rgba(255, 0, 127, 0.4);
+}
+
+/* Effetto hover */
+.button-search:hover {
+    background: linear-gradient(135deg, #ff3cbf, #ffea00);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 234, 0, 0.8);
+}
+
+/* Effetto attivo (click) */
+.button-search:active {
+    transform: scale(0.98);
+    box-shadow: 0px 0px 10px rgba(255, 234, 0, 0.5);
+}
+
+

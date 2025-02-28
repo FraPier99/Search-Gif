@@ -1,0 +1,24 @@
+/* 📱 RESPONSIVE DESIGN */
+
+
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    #input-search {
+        width: 220px;
+        font-size: 0.9rem;
+    }
+
+    .consigliati {
+        max-width: 90vw;
+    }
+
+  
+
+    .card {
+        width: 90%;
+    }
+}
