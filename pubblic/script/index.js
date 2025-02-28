@@ -144,7 +144,7 @@ const fetchGif = async (query) => {
       
   
    
-            const response = await axios.get(`https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${api_key}&limit=5`);
+            const response = await axios.get("/.netlify/functions/fetchApi");
             const res = response.data;
             const gifs = res.data;
             
