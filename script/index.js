@@ -1,6 +1,8 @@
+import dotenv from 'dotenv'
 
+dotenv.config()
 
-
+const api_key = process.env.API_KEY
 
 const span = document.getElementById('delelte-search')
 
@@ -142,7 +144,7 @@ const fetchGif = async (query) => {
       
   
    
-            const response = await axios.get(`https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${key}&limit=5`);
+            const response = await axios.get(`https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${api_key}&limit=5`);
             const res = response.data;
             const gifs = res.data;
             
