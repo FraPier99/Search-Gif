@@ -35,11 +35,11 @@ Crea un account su [Giphy Developers](https://developers.giphy.com/) e genera la
 
 3. **Crea un file .env nella root principale:**
 
-  Usa il file .env.example come riferimento.
+    Usa il file .env.example come riferimento.
 
-  Aggiungi la tua API Key di Giphy nel file .env. 
+    Aggiungi la tua API Key di Giphy nel file .env. 
 
- 4. **Avvia l'app::**
+ 5. **Avvia l'app::**
    ```bash
    npx netlify-cli dev
 
