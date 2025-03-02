@@ -27,8 +27,7 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
    npm install   
 3. **Avvia il server**
    ```bash
-   netlify dev  
-
+   netlify dev   
 
 
 
