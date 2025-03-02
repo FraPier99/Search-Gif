@@ -29,15 +29,11 @@ Crea un account su **https://developers.giphy.com/** e genera la tua api_key
    npm install axios dotenv  
    
 3. **Crea un file .env (root-principale):**
-    come in .env.example   
+   come in .env.example 
 
 4. **Avvia l'app:**
    ```bash
    npx netlify-cli dev
-        
-
-
-
 
 
 
