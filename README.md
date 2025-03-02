@@ -25,9 +25,10 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 2. **Installa le dipendenze:**
    ```bash
    npm install   
-3. **Avvia il server**
+   
+3. **Avvia l'App:**
    ```bash
-   netlify dev   
+   netlify dev     
 
 
 
