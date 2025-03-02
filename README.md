@@ -22,13 +22,17 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
    ```bash
    git clone https://github.com/FraPier99/Search-Gif.git  
 
-2. **Installa le dipendenze:**
+2. **Installa axios-dotenv (root-principale):**
    ```bash
-   npm install   
+   npm install axios dotenv  
    
-3. **Avvia l'App:**
+3. **Crea un file .env (root-principale):**
+    come in .env.example   
+
+2. **Avvia l'app:**
    ```bash
-   netlify dev     
+   npm netlify-cli dev
+        
 
 
 
