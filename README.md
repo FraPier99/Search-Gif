@@ -33,7 +33,7 @@ Crea un account su **https://developers.giphy.com/** e genera la tua api_key
 
 4. **Avvia l'app:**
    ```bash
-   npm netlify-cli dev
+   npx netlify-cli dev
         
 
 
