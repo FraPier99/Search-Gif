@@ -20,7 +20,7 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 
 1. **Clona il repository:**
    ```bash
-   git clone https://github.com/FraPier99/ToDoList-app.git  
+   git clone https://github.com/FraPier99/Search-Gif.git  
 
 2. **Installa le dipendenze:**
    ```bash
