@@ -1,7 +1,9 @@
 # 🎉 Search GIF App 🚀
 
 Una semplice applicazione che consente di cercare GIF utilizzando l'API di [Giphy](https://giphy.com/).  
-Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta per una maggiore sicurezza. 🔒  
+Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta per una maggiore sicurezza. 🔒 
+
+Crea un account su **https://developers.giphy.com/** e genera la tua api_key 
 
 ---
 
@@ -29,7 +31,7 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 3. **Crea un file .env (root-principale):**
     come in .env.example   
 
-2. **Avvia l'app:**
+4. **Avvia l'app:**
    ```bash
    npm netlify-cli dev
         
