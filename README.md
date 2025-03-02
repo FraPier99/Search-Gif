@@ -25,9 +25,13 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 ### 1️⃣ **Clona il repository**
 ```sh
 git clone https://github.com/tuo-username/tuo-repo.git
-
-```sh
 npm install 
+netlify dev
+
+
+
+
+
 
 
 
