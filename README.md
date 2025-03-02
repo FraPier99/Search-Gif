@@ -5,10 +5,6 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 
 ---
 
-## 📸 Anteprima
-![Anteprima del Progetto](screenshot.png) <!-- Sostituisci con un link o un'immagine della tua app -->
-
----
 
 ## 🔧 Tecnologie Utilizzate
 - **HTML**
@@ -20,13 +16,22 @@ Il backend è gestito con **Netlify Functions**, che mantiene l'API Key nascosta
 
 ---
 
-## 📥 Installazione e Uso
+## 📦 Installazione
 
-### 1️⃣ **Clona il repository**
-```sh
-git clone https://github.com/tuo-username/tuo-repo.git
-npm install 
-netlify dev
+1. **Clona il repository:**
+   ```bash
+   git clone https://github.com/FraPier99/ToDoList-app.git  
+
+2. **Installa le dipendenze:**
+   ```bash
+   npm install   
+3. **Avvia il server**
+   ```bash
+   netlify dev
+
+
+
+
 
 
 
